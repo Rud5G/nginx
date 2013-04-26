@@ -14,6 +14,18 @@ class Chef
         @enabled = false
       end
 
+      def created(arg=nil)
+        set_or_return(:created, arg, :kind_of => [TrueClass, FalseClass])
+      end
+
+      def enabled(arg=nil)
+        set_or_return(:enabled, arg, :kind_of => [TrueClass, FalseClass])
+      end
+
+      def group(arg=nil)
+        set_or_return(:group, arg, :kind_of => [String])
+      end
+
       def nginx_bin(arg=nil)
         set_or_return(:nginx_bin, arg, :kind_of => [String])
       end
@@ -24,18 +36,6 @@ class Chef
 
       def owner(arg=nil)
         set_or_return(:owner, arg, :kind_of => [String])
-      end
-
-      def group(arg=nil)
-        set_or_return(:group, arg, :kind_of => [String])
-      end
-
-      def created(arg=nil)
-        set_or_return(:created, arg, :kind_of => [TrueClass, FalseClass])
-      end
-
-      def enabled(arg=nil)
-        set_or_return(:enabled, arg, :kind_of => [TrueClass, FalseClass])
       end
 
     end
