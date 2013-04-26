@@ -31,6 +31,7 @@ class Chef
         instance_dir.run_action(:create)
         instance_conf_dir.run_action(:create)
         instance_log_dir.run_action(:create)
+        @new_resource.created(true)
       end
 
       def action_destroy
@@ -41,6 +42,7 @@ class Chef
 
       def action_enable
         instance_service.run_action(:enable)
+        @new_resource.enabled(true)
       end
 
       def action_disable
