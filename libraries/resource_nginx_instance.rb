@@ -34,8 +34,16 @@ class Chef
         set_or_return(:path, arg, :kind_of => [String])
       end
 
+      def options(arg=nil)
+        set_or_return(:options, arg, :kind_of => [Hash])
+      end
+
       def owner(arg=nil)
         set_or_return(:owner, arg, :kind_of => [String])
+      end
+
+      def template(arg=nil)
+        set_or_return(:template, arg, :kind_of => [String])
       end
 
     end
