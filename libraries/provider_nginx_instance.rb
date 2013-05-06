@@ -22,7 +22,7 @@ class Chef
         @current_resource.group(new_resource.group)
         @current_resource.nginx_bin(new_resource.nginx_bin)
         @current_resource.options(new_resource.options)
-        @current_resource.owner(new_resource.owner)
+        @current_resource.user(new_resource.user)
         @current_resource.path(new_resource.path)
         @current_resource.template(new_resource.terminate)
 
@@ -71,7 +71,7 @@ class Chef
         return @instance_dir unless @instance_dir.nil?
         @instance_dir = Chef::Resource::Directory.new(instance_dir_name, run_context)
         @instance_dir.recursive(true)
-        @instance_dir.owner(new_resource.owner)
+        @instance_dir.owner(new_resource.user)
         @instance_dir.group(new_resource.group)
         @instance_dir.mode(00755)
         @instance_dir
@@ -81,7 +81,7 @@ class Chef
         return @instance_conf_dir unless @instance_conf_dir.nil?
         @instance_conf_dir = Chef::Resource::Directory.new(::File.join(instance_dir_name, 'conf'), run_context)
         @instance_conf_dir.recursive(true)
-        @instance_conf_dir.owner(new_resource.owner)
+        @instance_conf_dir.owner(new_resource.user)
         @instance_conf_dir.group(new_resource.group)
         @instance_conf_dir.mode(00755)
         @instance_conf_dir
@@ -91,7 +91,7 @@ class Chef
         return @instance_log_dir unless @instance_log_dir.nil?
         @instance_log_dir = Chef::Resource::Directory.new(::File.join(instance_dir_name, 'log'), run_context)
         @instance_log_dir.recursive(true)
-        @instance_log_dir.owner(new_resource.owner)
+        @instance_log_dir.owner(new_resource.user)
         @instance_log_dir.group(new_resource.group)
         @instance_log_dir.mode(00755)
         @instance_log_dir
