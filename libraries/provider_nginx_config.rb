@@ -9,6 +9,10 @@ class Chef
         super
       end
 
+      def whyrun_supported?
+        false
+      end
+
       def load_current_resource
         @current_resource = Chef::Resource::NginxConfig.new(new_resource.name)
         @current_resource.cookbook(new_resource.cookbook)

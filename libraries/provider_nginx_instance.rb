@@ -13,6 +13,10 @@ class Chef
         @nginx_bin = nil
       end
 
+      def whyrun_supported?
+        false
+      end
+
       def load_current_resource
         @current_resource = Chef::Resource::NginxInstance.new(new_resource.name)
         @current_resource.group(new_resource.group)
