@@ -8,8 +8,6 @@ end
 
 nginx_config 'example.com' do
   template 'example.com.conf.erb'
-  options({
-  })
 end
 
 nginx_instance 'example.com' do
