@@ -1,0 +1,30 @@
+
+user <%= @user %>;
+worker_processes  <%= @worker_processes %>;
+
+events {
+  worker_connections <%= @worker_connections %>;
+}
+
+http {
+
+  sendfile on;
+  tcp_nopush on;
+  tcp_nodelay on;
+
+  gzip on;
+
+  server {
+
+  listen <%= @ports %>;
+  server_name <%= @server_name %>;
+
+  access_log <%= ::File.join('', @log_dir, 'access_log') %>;
+  error_log <%= ::File.join('', @log_dir, 'error_log') %>;
+  }
+
+  location / {
+    root   /var/www/nginx-default;
+    index  index.html index.htm;
+  }
+}
