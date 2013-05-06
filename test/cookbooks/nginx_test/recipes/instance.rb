@@ -14,7 +14,7 @@ end
 
 nginx_instance 'example.com' do
   nginx_bin '/usr/bin/nginx'
-  path '/opt'
-  owner 'nobody'
-  group 'nobody'
+  path  '/opt'
+  user  'nobody'
+  group 'nogroup'
 end
