@@ -116,8 +116,23 @@ class Chef
         ::File.exists?(instance_dir_name)
       end
 
+      def destroyed?
+      end
+
+      def disabled?
+      end
+
       def enabled?
         run_context.resource_collection.find('RunitService', "#{ new_resource.name }_nginx")
+      end
+
+      def restarted?
+      end
+
+      def started?
+      end
+
+      def stopped?
       end
 
     end

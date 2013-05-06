@@ -18,6 +18,14 @@ class Chef
         set_or_return(:created, arg, :kind_of => [TrueClass, FalseClass])
       end
 
+      def destroyed(arg=nil)
+        set_or_return(:destroyed, arg, :kind_of => [TrueClass, FalseClass])
+      end
+
+      def disabled(arg=nil)
+        set_or_return(:disabled, arg, :kind_of => [TrueClass, FalseClass])
+      end
+
       def enabled(arg=nil)
         set_or_return(:enabled, arg, :kind_of => [TrueClass, FalseClass])
       end
@@ -42,8 +50,8 @@ class Chef
         set_or_return(:started, arg, :kind_of => [TrueClass, FalseClass])
       end
 
-      def template(arg=nil)
-        set_or_return(:template, arg, :kind_of => [String])
+      def stopped(arg=nil)
+        set_or_return(:stopped, arg, :kind_of => [TrueClass, FalseClass])
       end
 
     end
